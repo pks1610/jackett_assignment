@@ -1,0 +1,16 @@
+.absPos{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    box-shadow: black 10px 10px;
+    max-width: 80%;
+}
+
+.resDivShow{
+    display: block;
+}
+
+.resDivHide{
+    display: none;
+}
+

@@ -1,0 +1,12 @@
+<div class="d-flex m-5 justify-content-between">
+    <h3> New Worksheet</h3>
+    <button class="btn btn-primary" (click)="downloadAsPDF()">Create Worksheet</button>
+</div>
+<div class="m-4" id="pdfTable" #pdfTable>
+    <div class="card m-2 border" *ngFor="let que of questions; let i=index">
+        <div class="card-body d-flex justify-content-between">
+            <p class="card-text">{{i+1}} . {{que.ques}}</p>
+            <button title="Remove Question" (click)="removeQues(que.id)" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+    </div>
+</div>

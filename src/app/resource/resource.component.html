@@ -1,0 +1,40 @@
+<div class="body">
+    <button title="Remove Question" type="button" (click)="closeRes()" class="btn-close" aria-label="Close" 
+    [ngClass]="showClose ? 'closeDivHide' : 'closeDivShow'"></button>
+    <div class="header m-4 d-flex justify-content-between">
+        <h3>Resource Bank</h3>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            +Add Question
+        </button>
+    </div>
+    <div class="m-4">
+        <div class="card m-2 border" *ngFor="let que of allQues; let i=index">
+            <div class="card-body">
+                <p class="card-text">{{que.ques}}</p>
+                <a *ngIf="!que.isAdded" (click)="addToWorkSheet(que.id)" class="btn btn-primary">
+                    +Add
+                </a>
+                <h6 class="disable" *ngIf="que.isAdded">Added</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Question</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea #ques class="wid-100"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" #closebutton data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveQues(ques.value)">Save Question</button>
+        </div>
+      </div>
+    </div>
+  </div>

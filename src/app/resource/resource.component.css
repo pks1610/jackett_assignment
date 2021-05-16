@@ -1,0 +1,17 @@
+.body{
+    border: 1px solid gray;
+    min-height: 900px;
+    background-color: rgb(246, 244, 244);
+}
+
+.disable{
+    color: lightgray;
+}
+
+.closeDivShow{
+    display: block;
+}
+
+.closeDivHide{
+    display: none;
+}
